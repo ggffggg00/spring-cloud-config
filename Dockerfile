@@ -4,7 +4,7 @@
 FROM openjdk:18-slim AS build
 COPY ./ /home/app/
 WORKDIR /home/app/
-RUN ./mvnw -f /home/app/pom.xml clean package
+RUN chmod +x ./mvnw && ./mvnw -f /home/app/pom.xml clean package
 
 #
 # Package stage
